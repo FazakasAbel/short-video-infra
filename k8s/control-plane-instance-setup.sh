@@ -1,3 +1,6 @@
+sudo su -
+sudo swapoff -a
+
 touch containerd-install.sh & curl https://gist.githubusercontent.com/mrmaheshrajput/d73a30ba56ad42d09ce82429ebbc84eb/raw/a1d6d2b60799185fbe02d5ed22f4842c60b77f56/containerd-install.sh > containerd-install.sh
 
 chmod u+x containerd-install.sh
