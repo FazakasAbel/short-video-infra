@@ -1,0 +1,23 @@
+mongodb:
+  image: mongo:latest
+  replicas: "1"
+
+webApp:
+  image: fazakasabel/web-app:latest
+  replicas: "1"
+
+flaskApp:
+  image: fazakasabel/flask-app:latest
+  replicas: "1"
+  mongoHost: mongo
+  mongoPort: "27017"
+  flaskEnv: "production"
+
+service:
+  mongoPort: 27017
+  webPort: 3000
+  flaskPort: 5000
+
+ingress:
+  enabled: true
+  className: nginx

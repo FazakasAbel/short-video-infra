@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-app
 spec:
-  replicas: 2
+  replicas: {{ .Values.flaskApp.replicas }}
   selector:
     matchLabels:
       app: flask-app
@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: fazakasabel/flask-app:latest
+        image: {{ .Values.flaskApp.image }}
         ports:
-        - containerPort: 5000
+        - containerPort: {{ .Values.service.flaskPort }}
         env:
         - name: MONGO_HOST
-          value: mongodb-service
+          value: {{ .Values.flaskApp.mongoHost }}
         - name: MONGO_PORT
-          value: "27017"
+          value: {{ .Values.flaskApp.mongoPort }}
         - name: FLASK_ENV
-          value: "production"
+          value: {{ .Values.flaskApp.flaskEnv }}

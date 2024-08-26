@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: web-deployment
 spec:
-  replicas: 2
+  replicas: {{ .Values.webApp.replicas }}
   selector:
     matchLabels:
       app: web-app
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: fazakasabel/web-app:latest
+        image: {{ .Values.webApp.image }}
         ports:
-        - containerPort: 3000
+        - containerPort: {{ .Values.service.webPort }}
