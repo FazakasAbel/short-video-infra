@@ -9,4 +9,4 @@ spec:
   ports:
   - protocol: TCP
     port: {{ .Values.service.webPort }}
-    targetPort: {{ .Values.service.webPort }}
+    targetPort: {{ .Values.webApp.port }}

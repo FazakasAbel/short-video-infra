@@ -16,11 +16,4 @@ spec:
       - name: flask-app
         image: {{ .Values.flaskApp.image }}
         ports:
-        - containerPort: {{ .Values.service.flaskPort }}
-        env:
-        - name: MONGO_HOST
-          value: {{ .Values.flaskApp.mongoHost }}
-        - name: MONGO_PORT
-          value: {{ .Values.flaskApp.mongoPort }}
-        - name: FLASK_ENV
-          value: {{ .Values.flaskApp.flaskEnv }}
+        - containerPort: {{ .Values.flaskApp.port }}

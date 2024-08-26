@@ -16,4 +16,4 @@ spec:
       - name: web-app
         image: {{ .Values.webApp.image }}
         ports:
-        - containerPort: {{ .Values.service.webPort }}
+        - containerPort: {{ .Values.webApp.port }}
