@@ -1,6 +1,6 @@
 resource "aws_instance" "control-plane" {
-    ami = "ami-04cdc91e49cb06165"
-    instance_type = "t3.small"
+    ami = var.ami
+    instance_type = var.cpu
     key_name = var.key_name
     vpc_security_group_ids = [ var.client_sg_id ]
     subnet_id = var.pri_sub_3a_id
@@ -23,8 +23,8 @@ resource "aws_instance" "control-plane" {
 }
 
 resource "aws_instance" "worker" {
-    ami = "ami-04cdc91e49cb06165"
-    instance_type = "t3.small"
+    ami = var.ami
+    instance_type = var.cpu
     key_name = var.key_name
     vpc_security_group_ids = [ var.client_sg_id ]
     subnet_id = var.pri_sub_3a_id
