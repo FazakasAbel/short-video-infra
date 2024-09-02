@@ -13,6 +13,7 @@ flaskApp:
   replicas: "1"
   port: 5000
   
+
 service:
   mongoPort: 27017
   webPort: 3000

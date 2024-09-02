@@ -1,8 +1,8 @@
 terraform {
     backend "s3" {
-        bucket = "short-video-demo"
+        bucket = "short-video-tf-state"
         key    = "backend/short-video-demo.tfstate"
-        region = "us-east-1"
-        dynamodb_table = "remote-backend"
+        region = "eu-north-1"
+        dynamodb_table = "remote-tf-backend"
     }
 }

@@ -9,3 +9,5 @@ variable pri_sub_4b_cidr {}
 variable public-key-path {}
 variable private-key-path {}
 variable ec2-bastion-ingress-ip-1 {}
+variable lifecycle_policy {}
+variable cpu {}

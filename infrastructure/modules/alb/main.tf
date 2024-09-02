@@ -14,9 +14,9 @@ resource "aws_lb" "application_load_balancer" {
 
 # create target group
 resource "aws_lb_target_group" "alb_target_group" {
-  name        = "control-plane-tg"
+  name        = "control-plane-np-tg"
   target_type = "instance"
-  port        = 31714
+  port        = 30426
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
 
