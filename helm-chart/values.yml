@@ -19,7 +19,7 @@ service:
   flaskPort: 5000
 
 storage:
-  id:   
+  id: fs-0c03e0345cdb7432b
   pvcName: efs-claim-1
   storageClassName: efs-sc
 

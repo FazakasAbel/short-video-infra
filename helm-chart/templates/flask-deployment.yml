@@ -17,16 +17,3 @@ spec:
         image: {{ .Values.flaskApp.image }}
         ports:
         - containerPort: {{ .Values.flaskApp.port }}
-        env:
-        - name: OPENAI_API_KEY
-          value: {{ .Values.flaskApp.openApiKey}}
-        - name: VOICE_ID
-          value: {{ .Values.flaskApp.voiceId}}
-        - name: ELEVENLABS_API_KEY
-          value: {{ .Values.flaskApp.elevenlabsApiKey}}
-        - name: MONGO_URI
-          value: {{ .Values.flaskApp.mongoUri}}
-        - name: ZAP_CAP_API_KEY
-          value: {{ .Values.flaskApp.zapCapApiKey}}
-        - name: ZAP_CAP_URI
-          value: {{ .Values.flaskApp.zapCapUri}}
