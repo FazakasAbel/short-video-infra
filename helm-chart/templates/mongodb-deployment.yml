@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mongodb-deployment
 spec:
@@ -7,13 +7,21 @@ spec:
   selector:
     matchLabels:
       app: mongodb
+  serviceName: "mongo"
   template:
     metadata:
       labels:
         app: mongodb
     spec:
       containers:
-      - name: mongodb
-        image: {{ .Values.mongodb.image }}
-        ports:
-        - containerPort: {{ .Values.mongodb.port }}
+        - name: mongodb
+          image: {{ .Values.mongodb.image }}
+          ports:
+          - containerPort: {{ .Values.mongodb.port }}
+          volumeMounts:
+            - name: persistent-storage
+              mountPath: /data/db
+      volumes:
+        - name: persistent-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.storage.pvcName }}

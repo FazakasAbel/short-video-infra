@@ -5,6 +5,7 @@ resource "aws_instance" "control-plane" {
     vpc_security_group_ids = [ var.client_sg_id ]
     subnet_id = var.pri_sub_3a_id
     associate_public_ip_address = false
+    user_data = file("${path.module}/${var.control_plane_instance_setup}")
     root_block_device {
       volume_size = 8
       delete_on_termination = true
@@ -29,6 +30,7 @@ resource "aws_instance" "worker" {
     vpc_security_group_ids = [ var.client_sg_id ]
     subnet_id = var.pri_sub_3a_id
     associate_public_ip_address = false
+    user_data = file("${path.module}/${var.worker_instance_setup}")
     root_block_device {
       volume_size = 12
       delete_on_termination = true

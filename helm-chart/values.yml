@@ -18,6 +18,11 @@ service:
   webPort: 3000
   flaskPort: 5000
 
+storage:
+  id:   
+  pvcName: efs-claim-1
+  storageClassName: efs-sc
+
 ingress:
   enabled: true
   className: nginx

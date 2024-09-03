@@ -23,3 +23,9 @@ variable "asg_health_check_type" {
 variable "pri_sub_3a_id" {}
 variable "pri_sub_4b_id" {}
 variable "tg_arn" {}
+variable "control_plane_instance_setup" {
+    default = "control-plane-instance-setup.sh"
+}
+variable "worker_instance_setup" {
+    default = "worker-instance-setup.sh"
+}
